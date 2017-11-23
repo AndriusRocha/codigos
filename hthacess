@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_USER_AGENT} .*AhrefsBot.* [OR]
+RewriteCond %{HTTP_USER_AGENT} .*SemrushBot.*
+RewriteRule ^(.*)$ http://www.anotherdomain.com/ [L,R=301]
+Order Allow,Deny
+Allow from all
+Deny from 216.123.8.0/8
+Deny from ....
